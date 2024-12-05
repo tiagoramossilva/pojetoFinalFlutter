@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/funcionalidades/create_account/view/create_account_confirmation.dart';
+import 'package:flutter_application_1/funcionalidades/forget_password/view/forgot_password_confirmation.dart';
 import 'package:go_router/go_router.dart';
 
 import 'funcionalidades/create_account/view/create_account_screen.dart';
-import 'funcionalidades/forget_password/view/forget_password_screen.dart';
+import 'funcionalidades/forget_password/view/forgot_password_screen.dart';
 import 'funcionalidades/sign_in/view/sign_in_screen.dart';
 
 final GoRouter router = GoRouter(
@@ -21,10 +23,31 @@ final GoRouter router = GoRouter(
           },
         ),
         GoRoute(
+          name: 'create-account-confirmation',
+          path: 'create-account-confirmation',
+          builder: (BuildContext context, GoRouterState state) {
+            return const CreateAccountConfirmation();
+          },
+        ),
+        GoRoute(
           name: 'forget-password',
           path: 'forget-password',
           builder: (BuildContext context, GoRouterState state) {
-            return const ForgetPassword();
+            return const ForgotPasswordScreen();
+          },
+        ),
+        GoRoute(
+          name: 'forget-password-confirmation',
+          path: 'forget-password-confirmation',
+          builder: (BuildContext context, GoRouterState state) {
+            return const ForgotPasswordConfirmation();
+          },
+        ),
+        GoRoute(
+          name: 'sign-in',
+          path: 'sign-in',
+          builder: (BuildContext context, GoRouterState state) {
+            return const SignIn();
           },
         ),
       ],

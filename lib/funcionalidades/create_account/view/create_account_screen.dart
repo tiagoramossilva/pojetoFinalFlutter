@@ -24,9 +24,23 @@ class CreateAccountScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const InputField(
                 label: 'Confirmação de senha*', hint: 'Confirme sua senha'),
+            const Spacer(),
             CustomBlackButton(
               text: "Criar conta",
-              onPressed: () => context.goNamed('forget-password'),
+              onPressed: () => context.goNamed('create-account-confirmation'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Já possui uma conta?'),
+                TextButton(
+                  onPressed: () => context.goNamed('sign-in'),
+                  style: ButtonStyle(
+                      overlayColor:
+                          WidgetStateProperty.all(Colors.transparent)),
+                  child: const Text('Entre aqui.'),
+                ),
+              ],
             ),
           ],
         ),

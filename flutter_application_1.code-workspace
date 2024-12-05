@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "flutter_application_1",
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}

@@ -17,13 +17,12 @@ class InputField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Text(
-              label,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ],
+        Text(
+          label,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          maxLines: 2, // Permite até 2 linhas para o texto do label
+          overflow:
+              TextOverflow.ellipsis, // Adiciona reticências caso ultrapasse
         ),
         const SizedBox(height: 10),
         TextFormField(
@@ -31,10 +30,14 @@ class InputField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hint,
             filled: true,
-            fillColor: Colors.grey[200],
+            fillColor: Colors.grey[200], // Fundo cinza claro para o input
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 15,
+              horizontal: 15,
+            ), // Padding interno do campo
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10), // Cantos arredondados
+              borderSide: BorderSide.none, // Sem bordas visíveis
             ),
           ),
         ),

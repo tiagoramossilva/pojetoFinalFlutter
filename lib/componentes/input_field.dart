@@ -6,11 +6,15 @@ class InputField extends StatelessWidget {
     required this.label,
     required this.hint,
     this.obscureText = false,
+    this.controller,
+    this.onChanged,
   });
 
   final String label;
   final String hint;
   final bool obscureText;
+  final TextEditingController? controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +24,25 @@ class InputField extends StatelessWidget {
         Text(
           label,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          maxLines: 2, // Permite até 2 linhas para o texto do label
-          overflow:
-              TextOverflow.ellipsis, // Adiciona reticências caso ultrapasse
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 10),
         TextFormField(
+          controller: controller,
+          onChanged: onChanged,
           obscureText: obscureText,
           decoration: InputDecoration(
             hintText: hint,
             filled: true,
-            fillColor: Colors.grey[200], // Fundo cinza claro para o input
+            fillColor: Colors.grey[200],
             contentPadding: const EdgeInsets.symmetric(
               vertical: 15,
               horizontal: 15,
-            ), // Padding interno do campo
+            ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10), // Cantos arredondados
-              borderSide: BorderSide.none, // Sem bordas visíveis
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
             ),
           ),
         ),

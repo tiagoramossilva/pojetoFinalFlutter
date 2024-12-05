@@ -15,25 +15,23 @@ class ConfirmationComponent extends StatelessWidget {
     return Center(
       child: Container(
         width: 430,
-        height: 660, // Altura do quadrado
-        padding: const EdgeInsets.all(20), // Espaçamento interno
+        height: 660,
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.white, // Fundo branco
-          borderRadius: BorderRadius.circular(10), // Bordas arredondadas
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, // Centraliza verticalmente
-          crossAxisAlignment:
-              CrossAxisAlignment.center, // Centraliza horizontalmente
-          mainAxisSize: MainAxisSize.min, // Ajusta o tamanho ao conteúdo
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(
-              Icons.check_circle, // Ícone de confirmação
-              color: Colors.black, // Cor do ícone
-              size: 80.0, // Tamanho do ícone
+              Icons.check_circle,
+              color: Colors.black,
+              size: 80.0,
             ),
-            const SizedBox(height: 20), // Espaçamento entre ícone e título
+            const SizedBox(height: 20),
             Text(
               title,
               style: const TextStyle(
@@ -43,7 +41,7 @@ class ConfirmationComponent extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 10), // Espaçamento entre título e descrição
+            const SizedBox(height: 10),
             Text(
               description,
               style: const TextStyle(

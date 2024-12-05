@@ -14,21 +14,19 @@ class ForgotPasswordScreen extends StatelessWidget {
         title: const Text(
           'Recuperação de senha',
           style: TextStyle(
-            fontSize: 26, // Tamanho da fonte
-            fontWeight: FontWeight.bold, // Negrito
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: true, // Centraliza o título no AppBar
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment:
-              MainAxisAlignment.start, // Alinha os widgets ao topo
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(
-                height: 40), // Espaçamento entre o texto e o campo de entrada
+            const SizedBox(height: 40),
             const InputField(
               label: 'Digite seu endereço de e-mail para recuperação de senha',
               hint: 'Insira seu e-mail',

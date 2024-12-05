@@ -9,7 +9,7 @@ class ForgotPasswordConfirmation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Define o plano de fundo como preto
+      backgroundColor: Colors.black, 
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

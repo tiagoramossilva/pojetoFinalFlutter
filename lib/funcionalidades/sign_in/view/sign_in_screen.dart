@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/button_black.dart';
 import 'package:go_router/go_router.dart';
+import '../../sign_in/view/sign_in_state_management.dart';
+import 'package:provider/provider.dart';
 
 import '../../../componentes/input_field.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  TextEditingController usuarioController = TextEditingController();
+  TextEditingController senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +33,26 @@ class SignIn extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
             ),
-            // const SizedBox(height: 160),
             const Spacer(flex: 2),
-            const InputField(
-              label: 'Usuário',
-              hint: 'Insira seu e-mail',
-            ),
+            InputField(
+                label: 'Usuário',
+                hint: 'Insira seu e-mail',
+                controller: usuarioController,
+                onChanged: (valor) {
+                  usuarioController.text = valor;
+                }),
             const SizedBox(height: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const InputField(
-                  label: 'Senha',
-                  hint: 'Digite sua senha',
-                  obscureText: true,
-                ),
+                InputField(
+                    label: 'Senha',
+                    hint: 'Digite sua senha',
+                    obscureText: true,
+                    controller: senhaController,
+                    onChanged: (valor) {
+                      senhaController.text = valor;
+                    }),
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -53,7 +68,10 @@ class SignIn extends StatelessWidget {
             const Spacer(flex: 3),
             CustomBlackButton(
               text: "Entrar",
-              onPressed: () => context.goNamed('create-account'),
+              onPressed: () {
+                Provider.of<SignInStateManagement>(context, listen: false)
+                    .entrar(usuarioController.text, senhaController.text);
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

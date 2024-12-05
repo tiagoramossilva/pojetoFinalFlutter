@@ -6,14 +6,12 @@ class InputField extends StatelessWidget {
     required this.label,
     required this.hint,
     this.obscureText = false,
-    this.controller,
     this.onChanged,
   });
 
   final String label;
   final String hint;
   final bool obscureText;
-  final TextEditingController? controller;
   final Function(String)? onChanged;
 
   @override
@@ -29,7 +27,7 @@ class InputField extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         TextFormField(
-          controller: controller,
+          // controller: controller,
           onChanged: onChanged,
           obscureText: obscureText,
           decoration: InputDecoration(

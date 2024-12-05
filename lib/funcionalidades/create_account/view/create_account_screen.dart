@@ -29,7 +29,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             InputField(
                 label: 'Nome completo*',
                 hint: 'Insira seu nome completo',
-                controller: createUserControllerName,
                 onChanged: (valor) {
                   createUserControllerName.text = valor;
                 }),
@@ -37,7 +36,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             InputField(
                 label: 'E-mail*',
                 hint: 'Insira seu e-mail',
-                controller: createUserControllerEmail,
                 onChanged: (valor) {
                   createUserControllerEmail.text = valor;
                 }),
@@ -45,7 +43,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             InputField(
                 label: 'Senha*',
                 hint: 'Insira sua senha',
-                controller: createUserControllerSenha,
                 onChanged: (valor) {
                   createUserControllerSenha.text = valor;
                 }),
@@ -53,7 +50,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             InputField(
                 label: 'Confirmação de senha*',
                 hint: 'Confirme sua senha',
-                controller: createUserControllerSenha,
                 onChanged: (valor) {
                   createUserControllerSenha.text = valor;
                 }),

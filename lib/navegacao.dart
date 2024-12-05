@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/funcionalidades/create_account/view/create_account_confirmation.dart';
 import 'package:flutter_application_1/funcionalidades/forget_password/view/forgot_password_confirmation.dart';
+import 'package:flutter_application_1/funcionalidades/home/view/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import 'funcionalidades/create_account/view/create_account_screen.dart';
@@ -48,6 +49,13 @@ final GoRouter router = GoRouter(
           path: 'sign-in',
           builder: (BuildContext context, GoRouterState state) {
             return const SignIn();
+          },
+        ),
+        GoRoute(
+          name: 'home',
+          path: 'home',
+          builder: (BuildContext context, GoRouterState state) {
+            return const HomeScreen();
           },
         ),
       ],

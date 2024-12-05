@@ -37,7 +37,6 @@ class _SignInState extends State<SignIn> {
             InputField(
                 label: 'Usuário',
                 hint: 'Insira seu e-mail',
-                controller: usuarioController,
                 onChanged: (valor) {
                   usuarioController.text = valor;
                 }),
@@ -49,7 +48,6 @@ class _SignInState extends State<SignIn> {
                     label: 'Senha',
                     hint: 'Digite sua senha',
                     obscureText: true,
-                    controller: senhaController,
                     onChanged: (valor) {
                       senhaController.text = valor;
                     }),
@@ -71,6 +69,7 @@ class _SignInState extends State<SignIn> {
               onPressed: () {
                 Provider.of<SignInStateManagement>(context, listen: false)
                     .entrar(usuarioController.text, senhaController.text);
+                context.goNamed('home');
               },
             ),
             Row(

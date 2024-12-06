@@ -1,92 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/event/event.dart';
+import 'package:go_router/go_router.dart';
 
 class EventCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final String city;
-  final String uf;
-  final String weekday;
-  final String date;
-  final String time;
-  final String category;
+  final Event event;
 
   const EventCard({
     super.key,
-    required this.image,
-    required this.title,
-    required this.city,
-    required this.uf,
-    required this.weekday,
-    required this.date,
-    required this.time,
-    required this.category,
+    required this.event,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-      padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.network(
-              image,
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  height: 150,
-                  color: Colors.black,
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'banner',
-                    style: TextStyle(color: Colors.white),
+    return InkWell(
+      onTap: () => context.goNamed('event-details', 
+      extra: event),
+      child: Container(
+        width: 200.0, // Largura fixa para os cards
+        height: 220.0, // Altura fixa para os cards
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Imagem
+            ClipRRect(
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(10)),
+              child: Image.network(
+                event.image,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 90.0, // Limita a altura da imagem
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            // Informações do evento
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    event.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                );
-              },
+                  const SizedBox(height: 4.0),
+                  Text(
+                    '${event.city}, ${event.uf}',
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.grey,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4.0),
+                  Text(
+                    '${event.weekday} - ${event.date} às ${event.time}',
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.grey,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            title.toUpperCase(),
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            '$city, $uf | $weekday, $date às $time',
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            category,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.black54,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../usuario/model/usuario.dart';
+import '../../../model/usuario.dart';
 
 class SignInStateManagement extends ChangeNotifier {
   Usuario? user;

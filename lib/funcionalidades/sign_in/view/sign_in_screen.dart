@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () => context.goNamed('forget-password'),
+                    onPressed: () => context.goNamed('forget-password', ),
                     style: ButtonStyle(
                         overlayColor:
                             WidgetStateProperty.all(Colors.transparent)),

@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart'; // Import necessário para kDebugMode
 import 'package:flutter_application_1/componentes/event_card.dart';
 import 'package:flutter_application_1/componentes/input_field_search.dart';
 import 'package:flutter_application_1/funcionalidades/models/event_data.dart';
+import 'package:flutter_application_1/model/event/event.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -98,62 +99,51 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               const SizedBox(height: 20),
-              // Lista horizontal - Categoria: Eventos em Destaque
+              // Seção de Eventos em Destaque
               const Text(
                 "Eventos em Destaque",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 180, // Altura fixa para os cards
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: featuredEvents.length,
-                  itemBuilder: (context, index) {
-                    final event = featuredEvents[index];
-                    return EventCard(
-                      image: event["image"]!,
-                      title: event["title"]!,
-                      city: event["city"]!,
-                      uf: event["uf"]!,
-                      weekday: event["weekday"]!,
-                      date: event["date"]!,
-                      time: event["time"]!,
-                      category: "Destaque",
-                    );
-                  },
-                ),
-              ),
               const SizedBox(height: 20),
-              // Lista horizontal - Categoria: Festas e Shows
+              _buildHorizontalList(featuredEvents, "Destaque"),
+              const SizedBox(height: 40),
+              // Seção de Festas e Shows
               const Text(
                 "Festas e Shows",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 180, // Altura fixa para os cards
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: musicEvents.length,
-                  itemBuilder: (context, index) {
-                    final event = musicEvents[index];
-                    return EventCard(
-                      image: event["image"]!,
-                      title: event["title"]!,
-                      city: event["city"]!,
-                      uf: event["uf"]!,
-                      weekday: event["weekday"]!,
-                      date: event["date"]!,
-                      time: event["time"]!,
-                      category: "Música",
-                    );
-                  },
-                ),
-              ),
+              const SizedBox(height: 20),
+              _buildHorizontalList(musicEvents, "Música"),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  /// Método para construir uma lista horizontal de eventos
+  Widget _buildHorizontalList(
+      List<Map<String, String>> events, String category) {
+    return SizedBox(
+      height: 180,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: events.length,
+        itemBuilder: (context, index) {
+          final event = events[index];
+          return EventCard(
+              event: Event(
+            image: event["image"]!,
+            title: event["title"]!,
+            city: event["city"]!,
+            uf: event["uf"]!,
+            weekday: event["weekday"]!,
+            date: event["date"]!,
+            time: event["time"]!,
+            category: category,
+            id: '',
+          ));
+        },
       ),
     );
   }

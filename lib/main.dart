@@ -6,13 +6,12 @@ import 'navegacao.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => SignInStateManagement(),
-        ),
-      ],
-      child:const MyApp()),);
+    MultiProvider(providers: [
+      ChangeNotifierProvider(
+        create: (context) => SignInStateManagement(),
+      ),
+    ], child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {

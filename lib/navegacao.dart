@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/componentes/bottom_navigation.dart';
 import 'package:flutter_application_1/funcionalidades/create_account/view/create_account_confirmation.dart';
+import 'package:flutter_application_1/funcionalidades/event_details/view/event_details_screen.dart';
 import 'package:flutter_application_1/funcionalidades/forget_password/view/forgot_password_confirmation.dart';
+import 'package:flutter_application_1/funcionalidades/history/view/history.dart';
 import 'package:flutter_application_1/funcionalidades/home/view/home_screen.dart';
+import 'package:flutter_application_1/funcionalidades/profile/view/profile_screen.dart';
+import 'package:flutter_application_1/model/event/event.dart';
 import 'package:go_router/go_router.dart';
 
 import 'funcionalidades/create_account/view/create_account_screen.dart';
@@ -51,13 +56,43 @@ final GoRouter router = GoRouter(
             return const SignIn();
           },
         ),
-        GoRoute(
-          name: 'home',
-          path: 'home',
-          builder: (BuildContext context, GoRouterState state) {
-            return const HomeScreen();
-          },
-        ),
+        ShellRoute(
+            builder: (BuildContext context, GoRouterState state, Widget child) {
+              return BottomNavigation(child: child);
+            },
+            routes: [
+              GoRoute(
+                name: 'home',
+                path: 'home',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const HomeScreen();
+                },
+                routes: <RouteBase>[
+                  GoRoute(
+                    name: 'event-details',
+                    path: 'event-details', 
+                    builder: (BuildContext context, GoRouterState state) {
+                      final Event event = state.extra as Event;
+                      return EventDetailsScreen(event: event);
+                    },
+                  ),
+                ],
+              ),
+              GoRoute(
+                name: 'history',
+                path: 'history',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const History();
+                },
+              ),
+              GoRoute(
+                name: 'profile-settings',
+                path: 'profile-settings',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const ProfileSettings();
+                },
+              ),
+            ]),
       ],
     ),
   ],

@@ -1,48 +1,71 @@
-// Definindo a lista de eventos para a categoria de destaque
-List<Map<String, String>> featuredEvents = [
+final List<Map<String, String>> featuredEvents = [
   {
     "image":
-        "https://png.pngtree.com/background/20210716/original/pngtree-festa-junina-banner-background-with-circular-border-picture-image_1396106.jpg",
-    "title": "Evento 1",
-    "city": "Cidade 1",
-    "uf": "UF",
-    "weekday": "Segunda",
-    "date": "10/12/2024",
-    "time": "18:00",
+        "https://discovery-next.svc.sympla.com.br/_next/image?url=https%3A%2F%2Fimages.sympla.com.br%2F6671b9992fd5e-xs.png&w=3840&q=75",
+    "title": "Festa Junina Celebration",
+    "city": "Mauá",
+    "uf": "SP",
+    "weekday": "Segunda-feira",
+    "date": "10/10/2023",
+    "time": "15:00",
+    "id": "1",
   },
   {
     "image":
-        "https://img.myloview.com.br/adesivos/grande-festa-plano-de-fundo-para-cartaz-ou-banner-400-114101532.jpg",
-    "title": "Evento 2",
-    "city": "Cidade 2",
-    "uf": "UF",
-    "weekday": "Terça",
-    "date": "11/12/2024",
+        "https://storage.zedoingresso.com.br/zedoingresso/uploads/eventos/imgGYCCMFMTI1EP8FRSK4FG8ZNXOA2BCO.jpg",
+    "title": "Halloween Party",
+    "city": "São Paulo",
+    "uf": "SP",
+    "weekday": "Sábado",
+    "date": "31/10/2023",
+    "time": "19:00",
+    "id": "2",
+  },
+  {
+    "image":
+        "https://images.tcdn.com.br/img/img_prod/845696/1658932918_1620256010_banner_mobile_festas.jpg",
+    "title": "Music Festival",
+    "city": "Florianópolis",
+    "uf": "SC",
+    "weekday": "Domingo",
+    "date": "20/11/2023",
     "time": "20:00",
+    "id": "3",
   },
-  // Adicione mais eventos aqui
 ];
 
-// Definindo a lista de eventos para a categoria de Festas e Shows
-List<Map<String, String>> musicEvents = [
+final List<Map<String, String>> musicEvents = [
   {
-    "image": "https://www.designi.com.br/images/preview/10682272.jpg",
-    "title": "Show 1",
-    "city": "Cidade 3",
-    "uf": "UF",
-    "weekday": "Sexta",
-    "date": "15/12/2024",
-    "time": "22:00",
+    "image":
+        "https://discovery-next.svc.sympla.com.br/_next/image?url=https%3A%2F%2Fimages.sympla.com.br%2F674e3e42962ad-xs.png&w=3840&q=75",
+    "title": "Festival de Verão",
+    "city": "Rio de Janeiro",
+    "uf": "RJ",
+    "weekday": "Sexta-feira",
+    "date": "12/01/2024",
+    "time": "21:00",
+    "id": "6",
   },
   {
     "image":
-        "https://img.freepik.com/vetores-premium/design-de-postagem-em-midia-social-de-festa-musical_7605-665.jpg?semt=ais_hybrid",
-    "title": "Show 2",
-    "city": "Cidade 4",
-    "uf": "UF",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4FF-etkHX4DZdH2FzcwyxYyS8SpYhIQfjhw&s",
+    "title": "Concerto de Rock",
+    "city": "Curitiba",
+    "uf": "PR",
     "weekday": "Sábado",
-    "date": "16/12/2024",
-    "time": "21:00",
+    "date": "22/01/2024",
+    "time": "22:00",
+    "id": "4",
   },
-  // Adicione mais eventos aqui
+  {
+    "image":
+        "https://storage.zedoingresso.com.br/zedoingresso/uploads/eventos/imgF3CBS4BXMVPM1I4A2R2INK51156FUT.jpg",
+    "title": "Noite Eletrônica",
+    "city": "Belo Horizonte",
+    "uf": "MG",
+    "weekday": "Quarta-feira",
+    "date": "28/01/2024",
+    "time": "23:30",
+    "id": "5",
+  },
 ];

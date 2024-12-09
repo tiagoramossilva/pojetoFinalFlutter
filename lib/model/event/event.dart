@@ -24,7 +24,7 @@ class Event {
     required this.category,
     this.organizer = 'Pamella Silva',
     this.description =
-        'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos',
+        'Participe deste evento único, cuidadosamente planejado para proporcionar uma experiência enriquecedora e envolvente. Com uma programação diversificada, que inclui palestras inspiradoras, atividades interativas e momentos de networking, este encontro é a oportunidade perfeita para aprender, trocar ideias e se conectar com pessoas que compartilham dos mesmos interesses. Não perca a chance de fazer parte deste momento especial e expandir seus horizontes!',
     this.registered = false,
   });
 }

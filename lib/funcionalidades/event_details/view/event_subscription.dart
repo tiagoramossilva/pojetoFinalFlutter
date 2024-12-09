@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/button_black.dart';
+import 'package:flutter_application_1/componentes/input_field.dart';
 import 'package:flutter_application_1/model/event/event.dart';
 import 'package:go_router/go_router.dart';
 
-class EventDetailsScreen extends StatelessWidget {
+class EventSubscription extends StatelessWidget {
   final Event event;
-
-  const EventDetailsScreen({super.key, required this.event});
+  const EventSubscription({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -33,23 +33,19 @@ class EventDetailsScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.center,
               child: Text(
-                'Detalhes do Evento',
+                'Confirmação de inscrição',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
               ),
             ),
             const SizedBox(height: 20),
-            // Imagem do evento
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
-                event.image,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 180.0,
+            const Text(
+              "Confirme as informações do evento: ",
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 20),
-            // Título do evento
+            const SizedBox(height: 8),
             Text(
               event.title,
               style: const TextStyle(
@@ -57,8 +53,6 @@ class EventDetailsScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 20),
-
             Row(
               children: [
                 const Icon(Icons.calendar_today, size: 16.0),
@@ -89,23 +83,27 @@ class EventDetailsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              "Descrição",
+              "Confirme suas informações: ",
               style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              event.description,
-              style: const TextStyle(fontSize: 14.0),
+            const InputField(
+              label: 'Nome completo:',
+              hint: 'Insira seu nome completo',
+            ),
+            const SizedBox(height: 8),
+            const InputField(
+              label: 'E-mail: ',
+              hint: 'Insira seu e-mail',
             ),
             const Spacer(),
             Center(
               child: CustomBlackButton(
                 text: "Inscrever-se",
-                onPressed: () =>
-                    context.goNamed('event-subscription', extra: event),
+                onPressed: () => context.goNamed('event-confirmation'),
               ),
             ),
           ],

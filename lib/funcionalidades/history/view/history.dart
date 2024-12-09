@@ -9,6 +9,8 @@ class History extends StatelessWidget {
     if (kDebugMode) {
       print('pagina de historico');
     }
-    return const Placeholder();
+    return const Center(
+      child: Text('pamella'),
+    );
   }
 }

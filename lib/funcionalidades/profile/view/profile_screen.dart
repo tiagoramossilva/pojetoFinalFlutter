@@ -9,6 +9,8 @@ class ProfileSettings extends StatelessWidget {
     if (kDebugMode) {
       print('pagina de perfil');
     }
-    return const Placeholder();
+    return const Center(
+      child: Text('tiago'),
+    );
   }
 }

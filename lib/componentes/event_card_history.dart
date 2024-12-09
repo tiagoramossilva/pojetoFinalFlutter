@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/event/event.dart';
 import 'package:go_router/go_router.dart';
 
-class EventCard extends StatelessWidget {
+class EventCardHistory extends StatelessWidget {
   final Event event;
 
-  const EventCard({
+  const EventCardHistory({
     super.key,
     required this.event,
   });
@@ -15,8 +15,8 @@ class EventCard extends StatelessWidget {
     return InkWell(
       onTap: () => context.goNamed('event-details', extra: event),
       child: Container(
-        width: 200.0, // Largura fixa para os cards
-        height: 220.0, // Altura fixa para os cards
+        width: 480.0, // Largura fixa para os cards
+        height: 260.0, // Altura fixa para os cards
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: BoxDecoration(
           color: Colors.grey[200],
@@ -33,7 +33,7 @@ class EventCard extends StatelessWidget {
                 event.image,
                 fit: BoxFit.cover,
                 width: double.infinity,
-                height: 90.0, // Limita a altura da imagem
+                height: 160.0, // Limita a altura da imagem
               ),
             ),
             const SizedBox(height: 8.0),

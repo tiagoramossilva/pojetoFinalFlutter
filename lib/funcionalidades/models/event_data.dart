@@ -69,3 +69,72 @@ final List<Map<String, String>> musicEvents = [
     "id": "5",
   },
 ];
+
+final List<Map<String, String>> eventHistory = [
+  {
+    "image":
+        "https://discovery-next.svc.sympla.com.br/_next/image?url=https%3A%2F%2Fimages.sympla.com.br%2F672945435078a-xs.png&w=3840&q=75",
+    "title": "Concerto de Jazz",
+    "city": "São Paulo",
+    "uf": "SP",
+    "weekday": "Terça-feira",
+    "date": "16/01/2024",
+    "time": "20:00",
+    "id": "1",
+  },
+  {
+    "image":
+        "https://www.beflyhall.com.br/wp-content/uploads/2024/07/banner-sympla-2.png",
+    "title": "Cultura Hip Hop",
+    "city": "Salvador",
+    "uf": "BA",
+    "weekday": "Domingo",
+    "date": "25/01/2024",
+    "time": "18:00",
+    "id": "2",
+  },
+  {
+    "image":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5o2DxeQWuaUQi71vcL7QfzGQIRgT-75C9jg&s",
+    "title": "Festival Gastronômico",
+    "city": "Florianópolis",
+    "uf": "SC",
+    "weekday": "Sábado",
+    "date": "30/01/2024",
+    "time": "17:00",
+    "id": "3",
+  },
+  {
+    "image":
+        "https://www.otempo.com.br/content/dam/otempo/editorias/economia/2024/4/economia-sympla-tera-ingressos-tokenizados-que-darao-seguranca-na-revenda-deles-1714196527.jpeg",
+    "title": "Festival de Cultura",
+    "city": "Fortaleza",
+    "uf": "CE",
+    "weekday": "Sexta-feira",
+    "date": "02/02/2024",
+    "time": "19:30",
+    "id": "4",
+  },
+  {
+    "image":
+        "https://www.beflyhall.com.br/wp-content/uploads/2024/05/banner-sympla-2.jpg",
+    "title": "Mostra Cultural",
+    "city": "Natal",
+    "uf": "RN",
+    "weekday": "Quarta-feira",
+    "date": "14/02/2024",
+    "time": "20:30",
+    "id": "5",
+  },
+  {
+    "image":
+        "https://www.beflyhall.com.br/wp-content/uploads/2024/09/banner-sympla.png",
+    "title": "Show de Música Popular Brasileira",
+    "city": "Belo Horizonte",
+    "uf": "MG",
+    "weekday": "Domingo",
+    "date": "18/02/2024",
+    "time": "21:00",
+    "id": "6",
+  },
+];

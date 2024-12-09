@@ -9,6 +9,7 @@ import 'package:flutter_application_1/funcionalidades/history/view/history.dart'
 import 'package:flutter_application_1/funcionalidades/home/view/home_screen.dart';
 import 'package:flutter_application_1/funcionalidades/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/model/event/event.dart';
+import 'package:flutter_application_1/model/usuario.dart'; // Importe a classe Usuario
 import 'package:go_router/go_router.dart';
 
 import 'funcionalidades/create_account/view/create_account_screen.dart';
@@ -16,11 +17,8 @@ import 'funcionalidades/forget_password/view/forgot_password_screen.dart';
 import 'funcionalidades/sign_in/view/sign_in_screen.dart';
 
 final _mainKey = GlobalKey<NavigatorState>();
-
 final _homeKey = GlobalKey<NavigatorState>();
-
 final _historicoKey = GlobalKey<NavigatorState>();
-
 final _perfilKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
@@ -70,7 +68,6 @@ final GoRouter router = GoRouter(
         ),
         StatefulShellRoute.indexedStack(
           builder: (context, state, navigationShell) {
-            // the UI shell
             return BottomNavigation(child: navigationShell);
           },
           branches: [
@@ -128,9 +125,14 @@ final GoRouter router = GoRouter(
               routes: [
                 GoRoute(
                   name: 'profile-settings',
-                  path: 'profile-settings',
+                  path: '/profile-settings',
                   builder: (BuildContext context, GoRouterState state) {
-                    return const ProfileSettings();
+                    final usuario = Usuario(
+                        nome: 'Wildson Caio Felipe',
+                        email: 'wildson.felipe@edu.sc.senai.br',
+                        dataNascimento: '08/04/1997',
+                        cpf: '451.234.543-12');
+                    return UserProfileScreen(usuario: usuario);
                   },
                 ),
               ],
